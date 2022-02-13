@@ -56,7 +56,7 @@ node () {
     		credentialsId: 'nexus-token',
     		variable: 'NEXUS_TOKEN'
     		)]){
-		     withMaven(maven: 'maven-3.8.4', mavenSettingsFilePath: '/var/jenkins_home/maven/settings.xml', globalMavenSettingsFilePath: '/var/jenkins_home/maven/settings.xml') {
+		 withMaven(maven: 'maven-3.8.4') {
      		 sh "mvn deploy -DskipTests"
      		}
     	}}
