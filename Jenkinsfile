@@ -1,29 +1,29 @@
 timestamps {
 
 node () {
-	stage ('conjur-cicd-demo - Checkout') {
+	stage ('Checkout') {
  	 checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '', url: 'https://github.com/bnasslahsen/conjur-cicd-demo.git']]])
 	}
 
-	stage ('conjur-cicd-demo - Clean ') {
+	stage ('Clean ') {
  	 withMaven(maven: 'maven-3.8.4') {
  		 sh "mvn clean"
  		}
 	}
 
-	stage ('conjur-cicd-demo -  Test') {
+	stage ('Compile and Test') {
  	 withMaven(maven: 'maven-3.8.4') {
  		 sh "mvn test"
  		}
 	}
 
-	stage ('conjur-cicd-demo - Packge') {
+	stage ('Packge') {
  	 withMaven(maven: 'maven-3.8.4') {
  		 sh "mvn package -DskipTests"
  		}
 	}
 
-	stage ('conjur-cicd-demo - Quality Analysis') {
+	stage ('Quality Analysis') {
 	withCredentials([
 		conjurSecretCredential(
 		credentialsId: 'sonar-token',
@@ -42,7 +42,7 @@ node () {
  		}
 	}}
 
-	stage ('conjur-cicd-demo - Deploy to nexus') {
+	stage ('Deploy to nexus') {
 	withCredentials([
     		conjurSecretCredential(
     		credentialsId: 'nexus-hostname',
@@ -63,7 +63,7 @@ node () {
 
 
 
-	stage ('conjur-cicd-demo - Install in remote server') {
+	stage ('Install to remote server') {
 	withCredentials([
 			conjurSecretCredential(
 			credentialsId: 'deploy-server-username',
