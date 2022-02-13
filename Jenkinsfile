@@ -37,11 +37,7 @@ node () {
 		conjurSecretCredential(
 		credentialsId: 'sonar-organisation',
 		variable: 'SONAR_ORGANISATION'
-		),
-		conjurSecretCredential(
-		credentialsId: 'OPENWEATHER_API_KEY',
-		variable: 'OPENWEATHER_API_KEY')
-					       ]){
+		)]){
  	 withMaven(maven: 'maven-3.8.4') { 
  		 sh "mvn sonar:sonar " 
  		}
