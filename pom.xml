@@ -60,10 +60,4 @@
             <url>${NEXUS_HOSTNAME}/repository/maven-releases/</url>
         </repository>
     </distributionManagement>
-    <scm>
-        <connection>scm:git:https://github.com/bnasslahsen/conjur-cicd-demo.git</connection>
-        <url>https://github.com/bnasslahsen/conjur-cicd-demo</url>
-        <developerConnection>scm:git:https://github.com/bnasslahsen/conjur-cicd-demo.git</developerConnection>
-        <tag>HEAD</tag>
-    </scm>
 </project>
