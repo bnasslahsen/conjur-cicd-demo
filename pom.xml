@@ -6,6 +6,13 @@
     <version>1.15-SNAPSHOT</version>
     <name>conjur-cicd-demo</name>
     <url>https://www.conjur.org/</url>
+    
+    <properties>
+     <sonar.organization>bnasslahsen</sonar.organization>
+     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+     <sonar.projectKey>bnasslahsen_conjur-cicd-demo</sonar.projectKey>
+    </properties>
+    
     <build>
         <plugins>
             <plugin>
