@@ -41,11 +41,11 @@ node () {
 		conjurSecretCredential(
 		credentialsId: 'OPENWEATHER_API_KEY',
 		variable: 'OPENWEATHER_API_KEY')
-					       ])
+					       ]){
  	 withMaven(maven: 'maven-3.8.4') { 
  		 sh "mvn sonar:sonar " 
  		}
-	}
+	}}
 	
 	stage ('conjur-cicd-demo - Deploy to nexus') {
 	withMaven(maven: 'maven-3.8.4', mavenSettingsFilePath: '/var/jenkins_home/maven/settings.xml', globalMavenSettingsFilePath: '/var/jenkins_home/maven/settings.xml') { 
