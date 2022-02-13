@@ -25,6 +25,23 @@ node () {
 	}
 	
 	stage ('conjur-cicd-demo - Quality Analysis') {
+	withCredentials([
+		conjurSecretCredential(
+		credentialsId: 'sonar-token',
+		variable: 'SONAR_TOKEN'
+		),
+		conjurSecretCredential(
+		credentialsId: 'sonar-hostname',
+		variable: 'SONAR_HOSTNAME'
+		),
+		conjurSecretCredential(
+		credentialsId: 'sonar-organisation',
+		variable: 'SONAR_ORGANISATION'
+		),
+		conjurSecretCredential(
+		credentialsId: 'OPENWEATHER_API_KEY',
+		variable: 'OPENWEATHER_API_KEY')
+					       ])
  	 withMaven(maven: 'maven-3.8.4') { 
  		 sh "mvn sonar:sonar " 
  		}
