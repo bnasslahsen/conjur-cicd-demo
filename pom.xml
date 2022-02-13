@@ -10,6 +10,7 @@
     <properties>
      <sonar.organization>${SONAR_ORGANISATION}</sonar.organization>
      <sonar.host.url>${SONAR_HOSTNAME}</sonar.host.url>
+     <sonar.login>${SONAR_TOKEN}</sonar.login>
      <sonar.projectKey>bnasslahsen_conjur-cicd-demo</sonar.projectKey>
     </properties>
     
