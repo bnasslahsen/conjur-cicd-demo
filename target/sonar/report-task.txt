@@ -1,7 +1,0 @@
-organization=bnasslahsen
-projectKey=bnasslahsen_conjur-cicd-demo
-serverUrl=https://sonarcloud.io
-serverVersion=8.0.0.26660
-dashboardUrl=https://sonarcloud.io/dashboard?id=bnasslahsen_conjur-cicd-demo
-ceTaskId=AX70mezmHBdLUYadZ-0q
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AX70mezmHBdLUYadZ-0q
